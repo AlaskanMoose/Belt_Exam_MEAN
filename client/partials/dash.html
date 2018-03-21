@@ -1,0 +1,76 @@
+<div ng-controller='dashController'>
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand">Dashboard</a>
+	    </div>
+	    <ul class="nav navbar-nav">
+	      <li><a ng-controller="usersController" ng-click="logOut()" href="#">Logout</a></li>
+	    </ul>
+	  </div>
+	</nav>
+  <div class="container">
+    <h1>Bid Now</h1>
+    <div class="row">
+      <div class="col-sm-4">
+        <h6>{{products.product1.description}}</h6>
+        <form ng-submit="bid(products.product1._id)">
+          <div class="form-group">
+            <input type="number" ng-model="data.number">
+            <input type="submit" value="Bid">
+          </div>
+        </form>
+        <div>
+          <table>
+            <thead>
+              <th>Current Bid:</th>
+            </thead>
+            <tbody>
+              <tr ng-repeat="bid in products.product1.bids track by $index ">{{bid.amount}}</tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <h6>{{products.product2.description}}</h6>
+        <form ng-submit="bid()">
+          <div class="form-group">
+            <input type="number" ng-model="bid.number">
+            <input type="submit" name="" value="Bid">
+          </div>
+        </form>
+        <div>
+          <table>
+            <thead>
+              <th>Current Bid:</th>
+            </thead>
+            <tbody>
+              <tr ng-repeat="bid in products2.bids track by $index ">{{bid._user}}</tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <h6>{{products.product3.description}}</h6>
+        <form ng-submit="bid()">
+          <div class="form-group">
+            <input type="number" ng-model="bid.number">
+            <input type="submit" name="" value="Bid">
+          </div>
+        </form>
+        <div>
+          <table>
+            <thead>
+              <th>Current Bid:</th>
+            </thead>
+            <tbody>
+              <tr ng-repeat="bid in products.product3.bids track by $index ">{{bid.amount}}</tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
